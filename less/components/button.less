@@ -1,0 +1,64 @@
+@import "var.less";
+
+.btn{
+    border-radius: 100px;
+    text-decoration: none;
+    border-color: @color-pink;
+    position: relative;
+
+    &:hover {
+        &:after{
+            content: "";
+            border: 1px solid;
+            border-color: inherit;
+            width: 100%;
+            height: 100%;
+            transition: border-radius .3s;
+            -webkit-border-radius: 100px;
+            border-radius: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 1;
+            -webkit-animation: 1s btn-animation linear infinite;
+            animation: 1s btn-animation linear infinite;
+        }
+        
+    }
+
+
+    &-sm{
+        padding: 12px 20px;
+        font-size: 14px;
+        font-weight: normal;
+    }
+
+    &-xs{
+        padding: 12px 8px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    
+    &-lg{
+        padding: 16px 30px;
+    }
+
+    &-pink{
+        background-color: @color-pink;
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+@keyframes btn-animation{
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    100%{
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3);
+        opacity: 0;
+    }
+}
